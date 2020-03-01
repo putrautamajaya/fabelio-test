@@ -62,44 +62,49 @@ class FurnitureStyle extends Component {
           </Grid>
         </Grid>
 
-        {open && (
-          <div
-            style={{
-              position: "absolute",
-              width: "100%",
-              border: "1px solid #999999",
-              boxSizing: "border-box"
-            }}
-          >
-            {selections.map((style, i) => {
-              return (
-                <div
-                  key={i}
-                  className="onHover"
-                  style={{ backgroundColor: "white", padding: "5px" }}
-                  onClick={() => this.onSelect(i)}
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            border: "1px solid #999999",
+            boxSizing: "border-box",
+            display: open ? "" : "none"
+          }}
+        >
+          {selections.map((style, i) => {
+            return (
+              <div
+                key={i}
+                className="onHover"
+                style={{ backgroundColor: "white", padding: "5px" }}
+                onClick={() => this.onSelect(i)}
+              >
+                <Grid
+                  container
+                  direction="row"
+                  justify="space-between"
+                  alignItems="center"
                 >
-                  <Grid
-                    container
-                    direction="row"
-                    justify="space-between"
-                    alignItems="center"
-                  >
-                    <Grid item>{style.name}</Grid>
+                  <Grid item>{style.name}</Grid>
 
-                    <Grid item>
-                      {style.selected ? (
-                        <CheckBoxIcon />
-                      ) : (
-                        <CheckBoxOutlineBlankIcon />
-                      )}
-                    </Grid>
+                  <Grid item>
+                    <CheckBoxIcon
+                      style={{
+                        color: "#009F6C",
+                        display: style.selected ? "" : "none"
+                      }}
+                    />
+                    <CheckBoxOutlineBlankIcon
+                      style={{
+                        display: !style.selected ? "" : "none"
+                      }}
+                    />
                   </Grid>
-                </div>
-              );
-            })}
-          </div>
-        )}
+                </Grid>
+              </div>
+            );
+          })}
+        </div>
 
         <hr />
       </div>
