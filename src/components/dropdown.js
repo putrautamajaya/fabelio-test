@@ -8,6 +8,19 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 class FurnitureStyle extends Component {
   state = { selections: [], open: false, label: "" };
 
+  componentDidMount() {
+    window.addEventListener("click", e => {
+      const { id } = this.props;
+      const el = document.getElementById(`${id ? id : "dropdown"}`);
+
+      if (el && el.contains(e.target)) {
+        return;
+      } else {
+        this.setState({ open: false });
+      }
+    });
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       this.setState({
@@ -24,10 +37,11 @@ class FurnitureStyle extends Component {
   };
 
   render() {
+    const { id } = this.props;
     const { selections, open, label } = this.state;
 
     return (
-      <div style={{ position: "relative" }}>
+      <div id={id ? id : "dropdown"} style={{ position: "relative" }}>
         <Grid
           container
           direction="row"

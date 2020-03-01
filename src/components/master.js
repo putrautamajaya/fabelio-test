@@ -188,6 +188,7 @@ class Master extends Component {
           >
             <Grid item lg={6}>
               <Dropdown
+                id="furniture-style"
                 label="Furniture Style"
                 selections={styles}
                 onSelect={this.selectStyle}
@@ -196,6 +197,7 @@ class Master extends Component {
 
             <Grid item lg={6}>
               <Dropdown
+                id="delivery-time"
                 label="Delivery Time"
                 selections={deliveryTimes}
                 onSelect={this.selectDeliveryTime}
