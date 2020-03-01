@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+.container {
+  background-color: #eaeaea;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.master {
+  background-color: white;
+  width: 1000px;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.filter {
+  background-color: #4285f4;
+  padding: 20px;
+}
+
+.onHover {
+  transition: 0.2s;
+}
+
+.onHover:hover {
+  cursor: pointer;
+  outline: none;
+  filter: brightness(75%);
+}
+
+input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 5px 0px;
+  font-size: 1rem;
+  outline: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+hr {
+  color: silver;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::placeholder {
+  color: white;
+}
+
+.card {
+  border-radius: 3px;
+  background: white;
+  box-shadow: 0 0 0 1px rgba(2, 2, 12, 0.05), 0 2px 4px -2px rgba(2, 2, 12, 0.1);
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
+  overflow: hidden;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-price {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: orange;
+}
+
+.card-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+.card-furniture-style {
+  color: #87baff;
+  margin-bottom: 10px;
+}
+
+.card-delivery-time {
+  text-align: right;
+  color: #4285f4;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  font-weight: bold;
 }
